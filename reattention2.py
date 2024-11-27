@@ -86,7 +86,7 @@ def main():
     max_seqlen_k = seq_len_k
     dropout_p = 0.1
     softmax_scale = 1.0 / (head_dim ** 0.5)
-    causal = False
+    causal = False123123
     window_size = (1, 1)  # 假设窗口大小为 (1, 1)
     softcap = 0.0
     alibi_slopes = torch.zeros(num_heads, device='cuda')  # 这里简单设置为零，可以根据需要调整
