@@ -161,14 +161,14 @@ def main():
     print("Q Output Shape:", q_out.shape)
     print("K Output Shape:", k_out.shape)
     print("V Output Shape:", v_out.shape)
-    elapsed_time = (end_time - start_time)*1000
+    elapsed_time = (end_time - start_time)
     flops_qk = 2 * seq_len_q * batch_size * num_heads * head_dim * seq_len_k
     flops_output = 2 * seq_len_q * batch_size * num_heads * head_dim * seq_len_k
-    total_flops = flops_qk + flops_output
+    total_flops = (flops_qk + flops_output)/elapsed_time
     gflops = total_flops / 1e9
     print(f"Total FLOPs: {total_flops:,} FLOPs")
     print(f"Total Gflops: {gflops:.4f} Gflops")
-    print(f"Elapsed Time: {elapsed_time:.4f} ms")
+    print(f"Elapsed Time: {elapsed_time:.4f} s")
    
 if __name__ == "__main__":
     main()
